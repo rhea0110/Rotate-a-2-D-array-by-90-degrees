@@ -1,0 +1,35 @@
+//  Given a two dimensional N*N array, print the output if the array is rotated by 90 degrees in clockwise direction.
+
+import java.util.Scanner;
+// Other imports go here, Do NOT change the class name
+class Main
+{
+  public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i, j, T;
+        T = scan.nextInt();
+        for (int k = 0; k < T; k++) {
+            int N = scan.nextInt();
+            int[][] mat = new int[N][N];
+            for (i = 0; i < N; i++)
+                for (j = 0; j < N; j++)
+                    mat[i][j] = scan.nextInt();
+            int[][] res = new int[N][N];
+            for (i = 0; i < N; i++) {
+                for (j = 0; j < N; j++) {
+                    res[j][N - 1 - i] = mat[i][j];
+                }
+            }
+            for (i = 0; i < N; i++) {
+                for (j = 0; j < N; j++){
+                    System.out.print(res[i][j]);
+             if(j < N-1){
+               System.out.print(" ");
+             }
+            }
+               System.out.print("\n");
+           }
+           System.out.print("\n");
+        }
+	}
+  }
